@@ -11,11 +11,17 @@ public class Main {
         sc.close();
 
         // 최대 구하기
-        OptionalInt max = Arrays.stream(nums).max();
-        OptionalInt min = Arrays.stream(nums).min();
-        if (max.isPresent() && min.isPresent())
-            System.out.printf("%d %d", min.getAsInt(), max.getAsInt());
-        else
-            System.out.print("error!");
+        int max = nums[0];
+        for (int num : nums) {
+            if (num > max)
+            max = num;
+        }
+        // 최소 구하기
+        int min = nums[0];
+        for (int num : nums) {
+            if (num < min)
+                min = num;
+        }
+        System.out.printf("%d %d", min, max);
     }
 }
